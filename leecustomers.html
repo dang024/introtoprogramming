@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+Unsorted arrays:</br>
+a:<p id='a'></p>
+b:<p id='b'></p>
+c:<p id='c'></p>
+d:<p id='d'></p>
+Sorted arrays:</br>
+a:<p id='a1'></p>
+b:<p id='b1'></p>
+c:<p id='c1'></p>
+d:<p id='d1'></p>
+
+<script>
+
+//customer name
+var a = ["Smith, Al","Toms, Andy","Jones, Zack","Vargas, Eddie","Donner, Alice","McMullen, Jessie","Nevins, Carol","Stark, Howard","Neeland, Franny","Boxby, Amos"];
+//monthly charge
+var b = [140.00, 42.00, 18.00, 18.00, 36.00, 140.00, 42.00, 24.00, 140.00, 24.00];
+//past due amount
+var c = [0, 0, 84.00, 36.00, 0, 18.00, 42.00, 42.00, 96.00, 0];
+//days past due
+var d = [0, 0, 60, 60, 0, 30, 90, 30, 120, 0];
+    
+/* 
+<html>
+<body>
+
+<p></p>
+
+<button onclick="bubbleSort()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
+
+function myFunction() {
+    fruits.sort();
+    document.getElementById("demo").innerHTML = fruits;
+}
+*/
+    
+function bubbleSort(inArray, array1, array2, array3)
+{
+    var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < inArray.length-1; i++) {
+            if (inArray[i] > inArray[i+1]) {
+                var temp = inArray[i];
+                var temp1 = array1[i];
+                var temp2 = array2[i];
+                var temp3 = array3[i];
+                inArray[i] = inArray[i+1];
+                array1[i] = array1[i+1];
+                array2[i] = array2[i+1];
+                array3[i] = array3[i+1];
+                inArray[i+1] = temp;
+                array1[i+1] = temp1;
+                array2[i+1] = temp2;
+                array3[i+1] = temp3;
+                swapped = true;
+            }
+        }
+    } while (swapped);
+}
+
+document.getElementById('a').innerHTML = a + ' ';
+document.getElementById('b').innerHTML = b + ' ';
+document.getElementById('c').innerHTML = c + ' ';
+document.getElementById('d').innerHTML = d + ' ';
+bubbleSort(a, b, c, d);
+document.getElementById('a1').innerHTML = a + ' ';
+document.getElementById('b1').innerHTML = b + ' ';
+document.getElementById('c1').innerHTML = c + ' ';
+document.getElementById('d1').innerHTML = d + ' ';
+</script>
+
+</body>
+</html>
